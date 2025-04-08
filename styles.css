@@ -154,6 +154,57 @@ body {
   margin-top: 0;
 }
 
+/* === Shared Card Background Styling === */
+.card {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* === Overlay for all background cards === */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  transition: background 0.3s ease;
+  z-index: 0;
+}
+
+.card:hover::before {
+  background: rgba(0, 0, 0, 0.4); /* dark overlay on hover */
+}
+
+/* Text stays on top */
+.card * {
+  position: relative;
+  z-index: 1;
+}
+
+/* === Specific Cards with Background Images === */
+.intro-card {
+  background-image: url('images/intro-bg.jpg');
+}
+
+.loan-widget {
+  background-image: url('images/projects-bg.jpeg');
+}
+
+.hobbies-card {
+  background-image: url('images/hobbies-bg3.jpeg');
+}
+
+.gallery-card {
+  background-image: url('images/gallery-bg.jpeg');
+}
+
+/* Change text color on hover for contrast */
+.card:hover {
+  color: white;
+}
+
 /* General Button Styling */
 .button {
     display: inline-block;
