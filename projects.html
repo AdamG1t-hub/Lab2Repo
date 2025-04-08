@@ -1,45 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - My Personal Website</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects - My Personal Website</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <br>
-    <main>
-        <h2>Welcome to My Projects Page</h2>
-        <p>Here are some of the projects I have worked on using the Laravel framework:</p>
-        <br>
-        <h3>1. Face Recognition Course Attendance System</h3>
-        <p>
-            This is a web-based attendance system that utilizes face recognition technology to automate student 
-            attendance tracking in university courses.
-        </p>
-        <ul>
-            <li><strong>Framework:</strong> Laravel</li>
-            <li><strong>Technology:</strong> OpenCV, PHP, MySQL</li>
-            <li><strong>Features:</strong> Face scanning, real-time attendance records, reports.</li>
-        </ul>
-        <br>
-        <h3>2. H2OSaver - Water Usage Tracker</h3>
-        <p>
-            H2OSaver is a web application designed to help users track and minimize their water usage. 
-            The system provides insights, reports, and recommendations for reducing water waste.
-        </p>
-        <ul>
-            <li><strong>Framework:</strong> Laravel</li>
-            <li><strong>Technology:</strong> PHP, JavaScript, MySQL</li>
-            <li><strong>Features:</strong> Water usage tracking, goal setting, data visualization.</li>
-        </ul>
-        <br>
-        <p><a href="index.html">Go back to the Homepage</a></p>
-    </main>
+  <!-- Header Bar -->
+  <div class="header-bar">
+    <div class="logo-text">
+      <div class="logo">
+        <img src="images/upm.jpg" alt="UPM Logo" />
+      </div>
+      <span class="website-title">My Personal Website</span>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 Danish Adam bin Idham. All Rights Reserved.</p>
-    </footer>
+    <div class="contact-btn">
+      <a href="contact.html" class="button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="25" height="28" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px; margin-bottom: 3px;">
+          <path d="M6.62 10.79a15.09 15.09 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1v3.6a1 1 0 0 1-1 1A17 17 0 0 1 3 5a1 1 0 0 1 1-1h3.6a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.58 1 1 0 0 1-.24 1.05z"/>
+        </svg>
+        Contact Me
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Banner -->
+  <div class="hero-banner-projects">
+    <img src="images/project-bg2.jpeg" alt="Projects Banner" />
+    <div class="banner-overlay-text">Explore My Laravel Projects.</div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="projects-section">
+    <div class="project-card">
+      <h3>1. Face Recognition Course Attendance System</h3>
+      <p>This web-based attendance system uses face recognition to automate student tracking in university courses.</p>
+      <ul>
+        <li><strong>Framework:</strong> Laravel</li>
+        <li><strong>Technology:</strong> OpenCV, PHP, MySQL</li>
+        <li><strong>Features:</strong> Face scanning, real-time records, reports</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>2. H2OSaver - Water Usage Tracker</h3>
+      <p>A web application to help users track and minimize water usage. Includes insights, reports, and recommendations.</p>
+      <ul>
+        <li><strong>Framework:</strong> Laravel</li>
+        <li><strong>Technology:</strong> PHP, JavaScript, MySQL</li>
+        <li><strong>Features:</strong> Usage tracking, goal setting, visualization</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="button-back">← Back to Homepage</a>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Danish Adam bin Idham. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
