@@ -1,10 +1,27 @@
 /* Body Styling */
 body {
-    margin: 0;
+    display: flex; /*Enables flexbox layout*/
+    flex-direction: column; /*Stack content*/
+    min-height: 100vh;
+    margin: 0; /* Removes default body margin */
     font-family: 'Segoe UI', sans-serif;
     background-color: #f4f6f9;
     color: #333;
   }
+
+/* Main Styling */
+main {
+  flex: 1;                /* Pushes the footer to the bottom if content is short */
+}
+
+/* Footer Styling*/
+footer {
+  text-align: center;
+  background-color: #1F1F1F;
+  padding: 15px;
+  color: #AAAAAA;
+  font-size: 1.0em;
+}
   
 /* Header Bar */
 .header-bar {
@@ -26,17 +43,26 @@ body {
 }
 
 /* Website Title Styling */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
-
 .website-title {
   font-family: 'Orbitron', sans-serif;
-  font-size: 32px;
-  font-weight: 500;
-  color: black;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-  margin-top: -12px;
+  font-size: 37px; /* Prominent size for visibility */
+  font-weight: 700; /* Bold weight for striking look */
+  color: transparent; /* Sets the text color to transparent */
+  -webkit-text-stroke: 2px transparent; /* Start with transparent stroke */
+  background: linear-gradient(90deg, #0077FF, #00FFFF); /* Gradient from blue to cyan */
+  background-clip: text; /* Standard property for modern browsers */
+  -webkit-background-clip: text; /* Ensures the gradient is applied to the text border */
+  -webkit-text-stroke-color: currentColor; /* Uses the gradient color for stroke */
+  text-shadow: none; /* Removes glow/shadow effect for clean look */
+  margin-top: -12.5px;
   padding: 0;
-  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Styling the ™ Symbol */
+.website-title sup {
+  font-size: 18px; /* Slightly smaller for the trademark symbol */
+  vertical-align: super; /* Positions the trademark symbol above */
+  color: #0077FF; /* Matches the gradient start */
 }
 
 /* UPM logo */
@@ -73,6 +99,7 @@ body {
   height: 280px;
   position: relative;
   text-align: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
 }
 
 /* Hero Banner */
@@ -133,6 +160,7 @@ body {
 /* Cards */
 .main-cards {
   display: flex;
+  flex: 1;
   gap: 30px;
   justify-content: center;
   padding: 40px 20px;
@@ -141,16 +169,17 @@ body {
 }
 
 .card {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-  padding: 25px 30px;
-  max-width: 400px;
-  flex: 1;
-  min-width: 280px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex: 1;
+  
+  border-radius: 15px;
+  min-width: 240px;
+  min-height: 240px;
+  height: auto;
+  padding: 25px 30px;
+  background: white;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
 }
 
 .card .button {
@@ -259,16 +288,6 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    background-color: #1F1F1F;
-    padding: 15px;
-    color: #AAAAAA;
-    font-size: 1.0em;
-    margin-top: 50px;
-}
-
 /* ABOUT PAGE STYLING */
 
 /* Card Style */
@@ -355,7 +374,7 @@ footer {
   height: 200px;
   object-fit: cover;
   filter: brightness(0.85);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* Projects Section Container */
@@ -562,8 +581,81 @@ details[open] .dropdown-icon {
   filter: brightness(0.5);
 }
 
+/* CONTACT PAGE STYLING */
+.header-bar .button-back {
+  margin-bottom: 15px;
+}
 
+main.contact-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center;    /* Centers content horizontally */
+}
 
+.contact-table-wrapper{
+  display: flex;
+  width: 100%;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;    /* Centers vertically */
+}
+
+.contact-table {
+  width: 50%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Collumn Rows */
+.contact-table tr {
+  width: 100%;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+/* Table Header Row Specified Styling */
+.contact-table th {
+  background: linear-gradient(90deg, #0078d4, #00bcd4);
+  color: white;
+  font-weight: bold;
+}
+
+/* Table Row Alternate Coloring*/ 
+.contact-table tr:nth-child(odd) {
+    background-color: rgb(241, 241, 241); /* Light gray for odd rows */
+}
+
+.contact-table tr:nth-child(even) {
+    background-color: #ffffff; /* White for even rows */
+}
+
+/* Column Header and Cell Basic Styling*/
+.contact-table th,
+.contact-table td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+/* Header Style */
+.contact-table th {
+  background-color: #f4f6f9;
+  font-weight: bold;
+}
+
+/* Hover Effect on Rows */
+.contact-table tr:hover {
+  background-color: #f1f9ff;
+}
+
+.contact-table img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
 
 
 
