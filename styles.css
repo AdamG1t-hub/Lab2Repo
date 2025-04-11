@@ -53,7 +53,7 @@ footer {
   background-clip: text; /* Standard property for modern browsers */
   -webkit-background-clip: text; /* Ensures the gradient is applied to the text border */
   -webkit-text-stroke-color: currentColor; /* Uses the gradient color for stroke */
-  text-shadow: none; /* Removes glow/shadow effect for clean look */
+  text-shadow: none; 
   margin-top: -12.5px;
   padding: 0;
 }
@@ -70,6 +70,12 @@ footer {
   height: 70px;
   width: 120px;
   margin-bottom: 0px;
+}
+
+/* Effect hovering upm logo */
+.header-bar .logo-text img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 
 /* HOME PAGE STYLING */
