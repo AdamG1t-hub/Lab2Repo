@@ -513,27 +513,34 @@ footer {
 
 /* Section Title & Intro */
 .section-title {
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   text-align: center;
   color: #6c63ff;
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .section-intro {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
   text-align: center;
   color: #555;
-  margin-bottom: 40px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: purple;
 }
 
 /* Hobbies Section Layout (Grid) */
 .hobbies-section {
-  max-width: 1100px;
-  margin: 50px auto;
+  max-width: 1300px;
+  margin: 40px auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 60px;
   padding: 20px;
+  background-color: rgb(253, 198, 207);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -544,8 +551,9 @@ footer {
 
 /* Hobby Card */
 .hobby-card {
+  font-size: 1.1rem;
   background: white;
-  padding: 25px 30px;
+  padding: 35px 40px;
   border-radius: 15px;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
@@ -553,6 +561,42 @@ footer {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+/* Add background reveal effect */
+.hobby-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.hobby-card.piano::before {
+  background-image: url('videos/piano-gif1.gif');
+}
+
+.hobby-card.chinchilla::before {
+  background-image: url('videos/chinchilla-gif1.gif');
+}
+
+
+/* Show background on hover */
+.hobby-card:hover::before {
+  opacity: 0.5; /* adjust how visible the image is */
+}
+
+/* Make sure actual content stays above the background image */
+.hobby-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hobby-card:hover {
@@ -578,9 +622,9 @@ footer {
 /* Hobby Image */
 .hobby-image {
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   margin-bottom: 15px;
 }
 
@@ -592,6 +636,7 @@ footer {
 }
 
 /* GALLERY PAGE STYLING */
+
 .gallery-main {
   max-width: 1100px;
   margin: 50px auto;
